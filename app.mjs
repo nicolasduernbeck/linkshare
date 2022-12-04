@@ -6,6 +6,7 @@ import errorHandler from './controllers/errorController.mjs';
 import AppError from './utils/appError.mjs';
 
 const app = express();
+app.use(express.json());
 
 if (process.env.NODE_ENV === 'dev') {
   app.use(morgan('dev'));
