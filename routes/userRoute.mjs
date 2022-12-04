@@ -4,6 +4,9 @@ import * as userController from '../controllers/userController.mjs';
 
 const router = Router();
 
-router.route('/').post(userController.createUser);
+router
+  .route('/')
+  .get(userController.getAllUsers)
+  .post(userController.createUser);
 
 export default router;

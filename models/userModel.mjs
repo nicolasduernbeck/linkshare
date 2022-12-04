@@ -17,6 +17,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
+    select: false,
     validate: {
       validator: function(email) {
         return validator.isEmail(email);
@@ -27,6 +28,7 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
+    select: false,
     validate: {
       validator: function(pw) {
         return pw.length > 8;
