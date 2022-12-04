@@ -4,13 +4,18 @@
   "description": "A place to share your links ",
   "main": "server.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "NODE_ENV=dev nodemon server.mjs"
+  },
+  "engines": {
+    "node": "16"
   },
   "author": "NicolasWebDeveloper",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongoose": "^6.7.5"
+    "mongoose": "^6.7.5",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
