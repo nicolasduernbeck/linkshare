@@ -45,7 +45,13 @@ const userSchema = new mongoose.Schema({
       },
       message: 'Passwords do not match'
     }
-  }
+  },
+  links: [
+    {
+      title: String,
+      url: String
+    }
+  ]
 });
 
 userSchema.pre('save', async function(next) {
