@@ -5,10 +5,13 @@ import mongoSanitize from 'express-mongo-sanitize';
 import helmet from 'helmet';
 
 import userRoute from './routes/userRoute.mjs';
+import linkRoute from './routes/linkRoute.mjs';
+
 import errorHandler from './controllers/errorController.mjs';
 import AppError from './utils/appError.mjs';
 
 const app = express();
+
 app.use(express.json());
 app.use(xss());
 app.use(mongoSanitize());
@@ -19,6 +22,7 @@ if (process.env.NODE_ENV === 'dev') {
 }
 
 app.use('/api/v1/users', userRoute);
+app.use('/api/v1/links', linkRoute);
 
 //Fallback route
 app.use((req, res, next) => {
