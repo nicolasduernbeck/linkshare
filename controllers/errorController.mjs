@@ -7,7 +7,7 @@ const sendErrDev = (err, req, res) => {
 };
 
 export default (err, req, res, next) => {
-  console.log('Error Handler triggered');
+  console.log(err);
   const error = { ...err };
   error.statusCode = err.statusCode || 500;
   error.status = err.status || 'fail';
