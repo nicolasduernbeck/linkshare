@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema({
       message: 'Invalid Email'
     }
   },
+  isVerified: {
+    type: Boolean,
+    default: false
+  },
   password: {
     type: String,
     required: true,
@@ -49,12 +53,13 @@ const userSchema = new mongoose.Schema({
   links: [
     {
       title: String,
-      url: String
+      link: String
     }
   ]
 });
 
 userSchema.pre('save', async function(next) {
+  if (!this.isNew) next();
   this.slug = slugify(this.name);
   this.passwordConfirm = undefined;
   this.password = await bcrypt.hash(this.password, 14);
