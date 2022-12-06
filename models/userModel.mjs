@@ -60,7 +60,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.pre('save', async function(next) {
   if (!this.isNew) next();
-  this.slug = slugify(this.name);
+  this.slug = slugify(this.name, { lower: true });
   this.passwordConfirm = undefined;
   this.password = await bcrypt.hash(this.password, 14);
   next();

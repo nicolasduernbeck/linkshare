@@ -7,12 +7,10 @@ const sendErrDev = (err, req, res) => {
 };
 
 export default (err, req, res, next) => {
-  console.log(err);
   const error = { ...err };
   error.statusCode = err.statusCode || 500;
   error.status = err.status || 'fail';
   error.message = err.message || 'Internal Server Error';
-  console.log(error);
   if (process.env.NODE_ENV === 'dev') {
     //App running in dev env
     sendErrDev(error, req, res);
