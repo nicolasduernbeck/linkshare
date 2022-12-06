@@ -38,8 +38,8 @@ export const loginUser = catchError(async (req, res, next) => {
 
 export const protect = catchError(async (req, res, next) => {
   let token;
-  if (req.headers.authentication && req.headers.authentication.startsWith('Bearer')) {
-    token = req.headers.authentication.split(' ')[1];
+  if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+    token = req.headers.authorization.split(' ')[1];
   }
 
   if (!token) return next(new AppError('You are not logged in', 401));
