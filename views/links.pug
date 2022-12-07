@@ -1,1 +1,13 @@
-h1= links[0]
+doctype html 
+html(lang='de')
+    head 
+        link(rel='stylesheet', href='css/links.css')
+        title= `${name}\`s Profile`
+    body 
+        .container
+            h1.title Peter
+            .link__container
+                each link in links
+                    .link__container-link 
+                        h2= link.title  
+                        a.link__container-button(href=`${link.link}`) Open
