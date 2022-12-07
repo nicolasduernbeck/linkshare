@@ -54,7 +54,7 @@ body {
 }
 
 .link__container-link > h2 {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .link__container-button {
@@ -67,6 +67,11 @@ body {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  font-size: 0.8rem;
   border-radius: 0.2rem;
+  font-size: 0.7rem;
+}
+
+.link__container-button > img {
+  margin: 0.2rem;
+  height: 1rem;
 }

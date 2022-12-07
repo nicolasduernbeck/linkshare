@@ -10,4 +10,6 @@ html(lang='de')
                 each link in links
                     .link__container-link 
                         h2= link.title  
-                        a.link__container-button(href=`${link.link}`) Open
+                        a.link__container-button(href=`${link.link}`) 
+                            p Open
+                            img(src='images/link-solid.svg')
