@@ -8,12 +8,5 @@ html(lang='de')
             h1.title Peter
             .link__container
                 each link in links
-                    .link__container-link 
-                        h2= link.title  
-<<<<<<< HEAD
-                        a.link__container-button(href=`${link.link}`) 
-                            p Open
-                            img(src='images/link-solid.svg')
-=======
-                        a.link__container-button(href=`${link.link}`) Open
->>>>>>> a7e020ca81e05b778abd95b397790b71f2cdd0a2
+                    a.link(href=`${link.link}`)
+                        p= link.title  

@@ -7,7 +7,21 @@ body {
   padding: 0;
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(to right, rgb(18, 119, 113), rgb(0, 255, 238));
+  background-image: linear-gradient(
+    to right top,
+    #d16ba5,
+    #c960b0,
+    #bb58be,
+    #a554cd,
+    #8354de,
+    #676bee,
+    #457ef9,
+    #008fff,
+    #00afff,
+    #00ccff,
+    #00e5fd,
+    #5ffbf1
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,8 +31,6 @@ body {
 .container {
   height: auto;
   width: 32rem;
-  background-color: #fff;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.305);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -29,6 +41,7 @@ body {
   text-align: center;
   font-family: sans-serif;
   font-weight: 100;
+  color: #fff;
 }
 
 .link__container {
@@ -41,37 +54,21 @@ body {
   align-items: center;
 }
 
-.link__container-link {
-  padding: 0.2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 3rem;
-  width: 98%;
-  background-color: rgba(215, 215, 215, 0.332);
-  margin-top: 0.5rem;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.305);
-}
-
-.link__container-link > h2 {
-  font-size: 0.8rem;
-}
-
-.link__container-button {
-  width: 5rem;
-  height: 2rem;
-  background-color: rgb(18, 119, 113);
-  text-decoration: none;
-  color: #fff;
+.link {
+  margin: 0.5rem;
+  width: 25rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
-  border-radius: 0.2rem;
-  font-size: 0.7rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  text-decoration: none;
+  color: black;
+  transition: all 0.2s linear;
+  font-weight: 400;
 }
 
-.link__container-button > img {
-  margin: 0.2rem;
-  height: 1rem;
+.link:hover {
+  transform: scale(1.02);
+  border: 1px solid black;
 }
