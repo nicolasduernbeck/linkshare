@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import xss from 'xss-clean';
 import mongoSanitize from 'express-mongo-sanitize';
 import helmet from 'helmet';
+import cookieParser from 'cookie-parser';
 
 import userRoute from './routes/userRoute.mjs';
 import linkRoute from './routes/linkRoute.mjs';
@@ -15,6 +16,7 @@ const app = express();
 
 app.use(express.json());
 app.use(express.static(`public`));
+app.use(cookieParser());
 app.set('view engine', 'pug');
 app.use(xss());
 app.use(mongoSanitize());
