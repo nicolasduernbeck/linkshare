@@ -51,14 +51,15 @@ input {
   height: 5vh;
   border: none;
   padding: 0.5rem;
-  border: 1px solid rgba(3, 3, 3, 0.35);
+  border: 1px solid #1b1a1a59;
+  border-radius: 0.2rem;
 }
 
 .submit__btn {
-  background-color: #008fff;
+  background-color: #2a2b2c;
   border-radius: 0.5rem;
   height: 3rem;
-  width: 10rem;
+  width: 25rem;
   display: flex;
   justify-content: center;
   align-items: center;
