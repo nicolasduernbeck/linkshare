@@ -3,10 +3,17 @@ html(lang='de')
     head 
         link(rel='stylesheet', href='css/links.css')
         title= `${name}\`s Profile`
+        script(src='/js/addLink.js' defer)
     body 
         .container
             h1.title Peter
             .link__container
                 each link in links
                     a.link(href=`${link.link}`)
-                        p= link.title  
+                        p= link.title 
+
+                if isLoggedIn
+                    h2 Add Element
+                    input.input__title(placeholder='Title')
+                    input.input__link(placeholder='Link')
+                    a.submit__btn.link Add

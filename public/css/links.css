@@ -45,7 +45,7 @@ body {
 }
 
 .link__container {
-  height: 50vh;
+  height: auto;
   width: 30rem;
   margin: 1rem;
   display: flex;
@@ -71,4 +71,25 @@ body {
 .link:hover {
   transform: scale(1.02);
   border: 1px solid black;
+}
+
+input {
+  margin: 0.5rem;
+  width: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  background: #ffffff;
+  text-decoration: none;
+  color: black;
+  transition: all 0.2s linear;
+  font-weight: 400;
+  height: 3rem;
+  border: none;
+}
+
+.submit__btn {
+  height: 3rem;
+  cursor: pointer;
 }
