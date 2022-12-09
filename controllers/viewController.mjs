@@ -9,4 +9,10 @@ export const renderLinks = catchError(async (req, res, next) => {
   res.status(200).render('links', { name: user.name, links: user.links });
 });
 
-export const renderLogin = catchError(async (req, res, next) => {});
+export const renderLogin = catchError(async (req, res, next) => {
+  res.render('login');
+});
+
+export const renderRegister = catchError(async (req, res, next) => {
+  res.render('register');
+});

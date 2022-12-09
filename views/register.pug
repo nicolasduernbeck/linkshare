@@ -1,0 +1,16 @@
+doctype html 
+html(lang='de')
+    head 
+        link(rel='stylesheet', href='css/form.css')
+        script(src='js/register.js' defer)
+        title= `Register`
+    body 
+        .container
+            .title__container
+                h1.title Register
+            input.name(placeholder='Name')
+            input.email(placeholder='E-Mail')
+            input.password(placeholder='Password', type='password')
+            input.password__confirm(placeholder='Confirm Password', type='password')
+            .btn__container
+                a.submit__btn Register
