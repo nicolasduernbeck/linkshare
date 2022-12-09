@@ -18,26 +18,28 @@ const verifyToken = token => {
   });
 };
 
-const sendCookie = async (res, payload) => {
+const sendCookie = async (res, payload, user) => {
   const token = await signToken(payload);
   res.cookie('jwt', token, {
     expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 10),
     httpOnly: true,
     secure: false
   });
-  res.status(200).json({ status: 'success', token });
+  res.status(200).json({ status: 'success', token, data: { name: user.name, slug: user.slug } });
 };
 
 export const loginUser = catchError(async (req, res, next) => {
   const { email, password } = req.body;
   if (!email || !password) return next(new AppError('Invalid request body', 400));
 
-  const user = await User.findOne({ email: req.body.email }).select('+password');
+  const user = await User.findOne({ email: req.body.email })
+    .select('+password')
+    .select('+slug');
 
   if (!user || !(await user.checkPassword(password, user.password)))
     return next(new AppError('User not found or password is incorrect!', 400));
 
-  sendCookie(res, { id: user.id });
+  sendCookie(res, { id: user.id }, user);
 });
 
 export const protect = catchError(async (req, res, next) => {
